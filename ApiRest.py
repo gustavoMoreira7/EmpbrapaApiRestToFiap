@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Response
 from fastapi.responses import JSONResponse
 import Conection as c
 import uvicorn
@@ -20,11 +20,12 @@ async def ProductionExtract(ano: str):
 
     conection = c.Conection(link, params)
     
-    # Extraia a tabela
-    table = conection.ExtractTableVitinicultura("ProductionExtract")
+    csv_content = conection.ExtractTableVitinicultura("ProductionExtract")
 
-    # Retorne os dados em formato JSON
-    return JSONResponse(content=table)
+    if csv_content:
+        return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
+    else:
+        return {"error": "Nenhuma tabela encontrada."}
 
 
 
@@ -50,12 +51,14 @@ async def ProcessingExtract(ano: str, filtro: str):
     }
 
     conection = c.Conection(link, params)
-    
-    # Extraia a tabela
-    table = conection.ExtractTableVitinicultura("processamento")
 
-    # Retorne os dados em formato JSON
-    return JSONResponse(content=table)
+    csv_content = conection.ExtractTableVitinicultura("processamento")
+
+    if csv_content:
+        return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
+    else:
+        return {"error": "Nenhuma tabela encontrada."}
+    
 
 
 
@@ -73,12 +76,15 @@ async def MarketingExtract(ano: str):
     }
 
     conection = c.Conection(link, params)
-    
-    # Extraia a tabela
-    table = conection.ExtractTableVitinicultura("comercializacao")
 
-    # Retorne os dados em formato JSON
-    return JSONResponse(content=table)
+    csv_content = conection.ExtractTableVitinicultura("comercializacao")
+
+    if csv_content:
+        return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
+    else:
+        return {"error": "Nenhuma tabela encontrada."}
+
+    
 
 
 
@@ -106,11 +112,13 @@ async def ImportExtract(ano: str, filtro: str):
 
     conection = c.Conection(link, params)
     
-    # Extraia a tabela
-    table = conection.ExtractTableVitinicultura("importacao")
+    csv_content = conection.ExtractTableVitinicultura("importacao")
 
-    # Retorne os dados em formato JSON
-    return JSONResponse(content=table)
+    if csv_content:
+        return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
+    else:
+        return {"error": "Nenhuma tabela encontrada."}
+
 
 
 
@@ -135,13 +143,14 @@ async def ExportExtract(ano: str, filtro: str):
         "filtro": filtro
     }
 
-    conection = c.Conection(link, params)
+    conection = c.Conection(link, params)    
     
-    # Extraia a tabela
-    table = conection.ExtractTableVitinicultura("exportacao")
+    csv_content = conection.ExtractTableVitinicultura("exportacao")
 
-    # Retorne os dados em formato JSON
-    return JSONResponse(content=table)
+    if csv_content:
+        return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
+    else:
+        return {"error": "Nenhuma tabela encontrada."}
 
 
 if __name__ == '__main__':
