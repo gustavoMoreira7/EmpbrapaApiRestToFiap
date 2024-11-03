@@ -6,6 +6,10 @@ import os
 
 app = FastAPI()
 
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
+
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
     return Response(status_code=204)  # Retorna um 204 No Content
