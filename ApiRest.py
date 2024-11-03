@@ -151,7 +151,3 @@ async def ExportExtract(ano: str, filtro: str):
         return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
     else:
         return {"error": "Nenhuma tabela encontrada."}
-
-
-if __name__ == '__main__':
-    uvicorn.run(app)
