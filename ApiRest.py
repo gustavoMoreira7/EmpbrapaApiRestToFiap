@@ -151,3 +151,9 @@ async def ExportExtract(ano: str, filtro: str):
         return Response(content=csv_content, media_type='text/csv', headers={"Content-Disposition": "attachment; filename=production_data.csv"})
     else:
         return {"error": "Nenhuma tabela encontrada."}
+
+
+if __name__ == "__main__":
+    # Definindo a porta para o ambiente do Heroku
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
