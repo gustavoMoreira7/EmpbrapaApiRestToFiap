@@ -2,6 +2,7 @@ from fastapi import FastAPI, Response
 from fastapi.responses import JSONResponse
 import Conection as c
 import uvicorn
+import os
 
 app = FastAPI()
 
