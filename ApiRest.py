@@ -36,7 +36,7 @@ async def ProductionExtract(ano: str):
         opcao = "opt_02"
 
         # Crie a conexão com os parâmetros fornecidos
-        link = 'http://vitibrasill.cnpuv.embrapa.br/index.php'
+        link = 'http://vitibrasil.cnpuv.embrapa.br/index.php'
         params = {
             "ano": ano,
             "opcao": opcao 
