@@ -38,10 +38,10 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 - **Parâmetros**:
   - `ano` (string): Ano para o qual os dados de processamento são solicitados.
   - `filtro` (string): Filtro para o tipo de uva. Opções disponíveis:
-    - SUBOPT_01: Viníferas
-    - SUBOPT_02: Americanas e Híbridas
-    - SUBOPT_03: Uvas de Mesa
-    - SUBOPT_04: Sem Classificação
+    - subopt_01: Viníferas
+    - subopt_02: Americanas e Híbridas
+    - subopt_03: Uvas de Mesa
+    - subopt_04: Sem Classificação
 - **Processo**:
   - Define `opcao = "opt_03"`.
   - Constrói o link de conexão e parâmetros, incluindo o filtro.
@@ -50,7 +50,7 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 
 **Exemplo de Uso**:
   bash
-  GET /tabela_processamento/2023/SUBOPT_01
+  GET /tabela_processamento/2023/subopt_01
 
 ### 3. `/tabela_comercializacao/{ano}`
 - **Descrição**: Extrai dados de comercialização para um determinado ano.
@@ -73,11 +73,11 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 - **Parâmetros**:
   - `ano` (string): Ano para o qual os dados de importação são solicitados.
   - `filtro` (string): Filtro para o tipo de produto. Opções disponíveis:
-    - SUBOPT_01: Vinhos de Mesa
-    - SUBOPT_02: Espumantes
-    - SUBOPT_03: Uvas Frescas
-    - SUBOPT_04: Uvas Passas
-    - SUBOPT_05: Suco de Uva
+    - subopt_01: Vinhos de Mesa
+    - subopt_02: Espumantes
+    - subopt_03: Uvas Frescas
+    - subopt_04: Uvas Passas
+    - subopt_05: Suco de Uva
 - **Processo**:
   - Define `opcao = "opt_05"`.
   - Constrói o link de conexão e parâmetros, incluindo o filtro.
@@ -86,7 +86,7 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 
 **Exemplo de Uso**:
   bash
-  GET /tabela_importacao/2023/SUBOPT_01
+  GET /tabela_importacao/2023/subopt_01
 
   
 ### 5. `/tabela_exportacao/{ano}/{filtro}`
@@ -95,10 +95,10 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 - **Parâmetros**:
   - `ano` (string): Ano para o qual os dados de exportação são solicitados.
   - `filtro` (string): Filtro para o tipo de produto. Opções disponíveis:
-    - SUBOPT_01: Vinhos de Mesa
-    - SUBOPT_02: Espumantes
-    - SUBOPT_03: Uvas Frescas
-    - SUBOPT_04: Suco de Uva
+    - subopt_01: Vinhos de Mesa
+    - subopt_02: Espumantes
+    - subopt_03: Uvas Frescas
+    - subopt_04: Suco de Uva
 - **Processo**:
   - Define `opcao = "opt_06"`.
   - Constrói o link de conexão e parâmetros, incluindo o filtro.
@@ -107,4 +107,4 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 
 **Exemplo de Uso**:
   bash
-  GET /tabela_exportacao/2023/SUBOPT_02
+  GET /tabela_exportacao/2023/subopt_02
