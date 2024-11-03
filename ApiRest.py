@@ -6,6 +6,10 @@ import os
 
 app = FastAPI()
 
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return Response(status_code=204)  # Retorna um 204 No Content
+
 @app.get('/tabela_producao/{ano}')
 async def ProductionExtract(ano: str):
     # Obtenha os parâmetros da URL
