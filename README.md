@@ -108,3 +108,6 @@ Cada endpoint recebe um ano e, em alguns casos, um filtro adicional. A API cria 
 **Exemplo de Uso**:
   bash
   GET /tabela_exportacao/2023/subopt_02
+
+### 6. `Ponto aplicavel para todos os EndPoints.`
+- **Descrição**: Todo EndPoint tem um try e except que faz a verificação da pagina da vitibrasil, casos a pagina esteja fora do ar ele faz o consumo do ambiente criado dentro do azure, que foi chamado de Azure Backup, onde os dados foram extraidos anteriormente e carregados dentro do Azure.
