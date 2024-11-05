@@ -3,6 +3,8 @@
 ## Visão Geral
 Esta API foi construída com o FastAPI para realizar a extração de tabelas de dados vitícolas de diferentes categorias, como produção, processamento, comercialização, importação e exportação, para um determinado ano e, em alguns casos, com filtros adicionais. A API utiliza uma classe `Conection` do módulo `Conection`, responsável por criar uma conexão e extrair tabelas específicas.
 
+caminho da api: https://fiap-techchallenge-one-63314cb7cf83.herokuapp.com/
+
 ## Dependências
 Para executar o código, as seguintes bibliotecas e módulos são necessários:
 - **FastAPI**: Para criação de APIs.
